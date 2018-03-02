@@ -1,0 +1,110 @@
+.Search{
+    width: 100%;
+    height: 1.17333rem;
+    padding: 0 .4rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+.iconSearch{
+    background: url(../assets/images/icons/img-icon-normal-search2-2fb94833aa.png) no-repeat;
+    background-size: 100% 100%;
+    width: .37333rem;
+    height: .37333rem;
+    margin-right: .13333rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.wrapSearchBox{
+    flex: 1;
+    text-align: center;
+    color: #666;
+    height: .74667rem;
+    line-height: .74667rem;
+    font-size: .37333rem;
+    background-color: #ededed;
+    border-radius: .10667rem;
+}
+
+.cateNavVertWrap{
+    width: 2.16rem;
+    background-color: #fff;
+    position: fixed;
+    top: 1.17333rem;
+    bottom: 1.30667rem;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+.navList{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+.navList li{
+    margin-top: .53333rem;
+    width: 100%;
+    height: .66667rem;
+    text-align: center;
+}
+.navList li.active a{
+    font-size: .48rem;
+    color: #ab2b2b;
+    border-left: .08rem solid #ab2b2b;
+}
+.navList li a{
+    display: block;
+    color: #333;
+    font-size: .37333rem;
+    line-height: .66667rem;
+    box-sizing: border-box;
+}
+
+.moduleTitle{
+    height: 1.44rem;
+    line-height: 1.44rem;
+    text-align: center;
+    font-size: .32rem;
+    color: #333;
+}
+.subCateList{
+    margin-left: 2.16rem;
+    margin-top: 1.17333rem;
+    padding: .4rem .4rem 1.30667rem;
+}
+.topBanner{
+    width: 100%;
+    height: 2.56rem;
+    display: table;
+    background: url(../assets/images/3387b55730e9188536354fcb08fb40c5.jpg) center no-repeat #f4f4f4;
+    background-size: cover;
+    border-radius: 4px;
+}
+.cateItem ul li{
+    display: inline-block;
+    margin-right: .45333rem;
+    font-size: 0;
+    width: 1.92rem;
+    vertical-align: top;
+}
+.cateItem ul li:nth-child(3n){
+    margin-right: 0;
+}
+.cateItem ul li img{
+    width: 1.92rem;
+    height: 1.92rem;
+    background-color: #fff;
+}
+.cateItem ul li p{
+    height: .96rem;
+    font-size: .32rem;
+    color: #333;
+    text-align: center;
+    line-height: .45333rem;
+}

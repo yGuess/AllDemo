@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <style>
+        .scroll-demo{
+            width: 600px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+            /*overflow: hidden;*/
+            border: solid 1px #cacaca;
+        }
+        .cont-wrap{
+            height: 100%;
+            padding: 0 15px;
+            overflow: hidden;
+            background-clip: padding-box;
+        }
+        .scroll{
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background-color: #cacaca;
+        }
+        .scroll-slider{
+            width: 8px;
+            height: 30px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 1.3px;
+            border-radius: 3px/5px;
+        }
+        .scroll-slider:focus{
+            cursor: default;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <div class="scroll-demo">
+        <!-- 内容部分 -->
+        <div class="cont-wrap">
+            <p>《源氏物语》是日本的一部古典文学名著，对于日本文学的发展产生过巨大的影响，是日本古典文学的高峰，被誉为日本的红楼梦。在日本开启了“物哀”的时代。</p>
+            <P>作品的成书年代一般认为是在1001年至1008年间，是世界上最早的长篇小说。小说描写了日本平安时代的风貌，揭露人性与宫廷斗争，反映了平安时代的宫廷生活。</P>
+            <P>多年来，被丰子恺，林文月，乔红伟等翻译大师所翻译，其中，丰子恺译本和林文月译本阅读人群最多。</P>
+            <p>《源氏物语》成书于公元1001-1008年之间，“物语”[2]  是日本的文学体裁，它是世界上最早的长篇小说，是三千万日本家庭不朽的国民文学.[非亚洲十大文学之一.已修改]</p>
+            <p>以日本平安王朝全盛时期为背景，通过主人公源氏的生活经历和爱情故事，描写了当时社会的腐败政治和淫乱生活上层贵族之间的互相倾轧和权力斗争是贯穿全书的一条主线，而源氏的爱情婚姻，则揭示了一夫多妻制下妇女的悲惨命运。在贵族社会里，男婚女嫁往往是同政治斗争的手段，妇女成了政治交易的工具和贵族男人手中的玩物。</p>
+            <p>全书共五十四回，近百万字。故事描写了四代天皇，历70余年，所涉人物四百多位，其中印象
+                鲜明的也有二三十人。人物以上层贵族为主，也有中下层贵族、宫女、侍女及平民百姓。</p>
+            <p>全书以源氏家族为中心，前两部描写了光源氏与众女子的种种或凄婉或美好的爱情生活；第三部以光源氏之子薰君为主人公，铺陈了复杂纷繁的男女爱情纠葛事件。</p>
+            <p>从体裁看，该书颇似我国唐代的传奇、宋代的话本，但行文典雅，很具散文的韵味，加上书中引用白居易的诗句90余处，及《礼记》、《战国策》、《史记》、《汉书》等中国古籍中的史实和典故，并巧妙地隐伏在迷人的故事情节之中，使该书具有浓郁的中国古典文学的气氛，我国读者读来有读本国小说那种强烈的亲近感。</p>
+            <p>《源氏物语》的作者是日本平安时代（公元794-1192）的著名女文学家紫式部（973－1015），紫式部[4]  本姓藤原，字不详。按照日本古代妇女没有名字的惯例，紫式部只是后人给她写的作品上加题上的名字。因其长兄任式部丞，而当时宫中女官往往以其父兄的官衔为名，以显其身份，所以称为藤式部；后来因她所写《源氏物语》中的紫姬深为世人喜爱，遂改称紫式部。作者生卒年月不详，普遍认为是生于978年，死于1015年。紫式部出身于充满书香气的中等贵族家庭，是一位极富才情的女子，其祖父等辈及兄长都是当时有名的歌人，父亲更是长于汉诗和歌，对中国古典文学颇有研习。作者因此自幼得以随父学习汉诗，并熟读中国古代典籍，她不仅对白居易的诗有很深的造诣，而且还十分了解佛经和音乐。紫式部家道中落，曾给藤原宣孝做过继室（或侧室），生女藤原贤子；丈夫去世后，依赖父兄生活，寡居十年。后由藤原道长聘为一条天皇中宫藤原彰子的侍读女官，讲解白居易的诗，在宫中供职期间，紫式部写了《紫式部日记》、《紫式部集》等作品，《源氏物语》是她写给天皇与中宫供消遣的读物（也有的说是其对其父的作品整理加工完善得到）。</p>
+            <p>1、结构：经纬交织。主干单纯而集中，支脉清晰而紧凑，作为世界文学史上第一部长篇写实小说，其结构手法具有开创意义。</p>
+            <p>2、人物：个性鲜明。故事是跟着人物走而不是随着事件来，作者特别擅长运用细致入微的心理描写来揭示人物复杂丰富的内心世界。（藤壶女御与光源氏发生乱伦关系后，灵魂深处欲爱不能、欲罢不忍的矛盾心理和苦恼刻画的很成功。）</p>
+            <p>3、景物描写：“物哀”与“幽玄”。景物描写与人物的性格表现、情感的流露、命运的变迁及社会的发展紧密相关，体现追求优美、崇尚“物哀”与“幽玄”这一美学境界的独特特色。</p>
+            <p>4、语言：优美典雅。透露着一股缠绵的幽情。小说引用最多的白居易诗共100余处，引用和歌800余首。</p>
+        </div>
+        <!-- 滚动条 -->
+        <div class="scroll">
+            <div class="scroll-slider"></div>
+        </div>
+    </div>
+    <script>
+        var slider = document.querySelector('.scroll-slider');
+        var cont = document.querySelector('.cont-wrap');
+        var wrap = document.querySelector('.scroll-demo');
+        var scroll = document.querySelector('.scroll');
+        var v = 0; // slider当前Y轴位置
+
+        slider.onmousedown = function(evt){
+            var scrollH = scroll.clientHeight;
+            var sliderH = slider.clientHeight;
+            var pageY1 = evt.pageY;
+            var avaHeight = scrollH - sliderH;
+            scroll.onmousemove = function(e){
+                v = v + e.pageY - pageY1;
+                v = v <= 0 ? 0:v;
+                v = v >= avaHeight ? avaHeight:v;
+                slider.style.top = v + 'px';
+                //console.log(slider.style.top+' '+v);
+                pageY1 = e.pageY;
+
+                var scrollTop = (cont.scrollHeight-cont.clientHeight)*v/avaHeight;
+                cont.scrollTop = scrollTop;
+            }
+        };
+        slider.onmouseout = function(){
+            scroll.onmousemove = null;
+        }
+        slider.onmouseup = function(){
+            scroll.onmousemove = null;
+        }
+    </script>
+</body>
+</html>

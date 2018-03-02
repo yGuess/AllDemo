@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <style>
+        html,body{
+            height: 100%;
+            min-height: 100%;
+            margin: 0;
+        }
+        .wrap-div{
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+        .w-c-1{
+            background: url("images/bg1.jpg") no-repeat;
+        }
+        .w-c-2{
+            background: url("images/bg2.jpg");
+        }
+        .w-c-3{
+            background: url("images/bg3.jpg");
+        }
+        .w-c-4{
+            background: url("images/bg4.jpg");
+        }
+        .w-c-5{
+            background: url("images/bg5.jpg");
+        }
+        .w-c-6{
+            background: url("images/bg6.jpg");
+        }
+        .w-c-7{
+            background: url("images/bg7.jpg");
+        }
+        .w-c-8{
+            background: url("images/bg8.jpg");
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <div class="wrap-div w-c-1"></div>
+    <div class="wrap-div w-c-2"></div>
+    <div class="wrap-div w-c-3"></div>
+    <div class="wrap-div w-c-4"></div>
+    <div class="wrap-div w-c-5"></div>
+    <div class="wrap-div w-c-6"></div>
+    <div class="wrap-div w-c-7"></div>
+    <div class="wrap-div w-c-8"></div>
+    <script>
+        window.onload = function(){
+            var wrap_divs = document.body.getElementsByClassName('wrap-div');
+            for(var i= 0,len=wrap_divs.length; i<len ; i++){
+                wrap_divs[i].style.backgroundPosition= "0 -"+Math.ceil(wrap_divs[i].offsetHeight/2)*i+'px';
+            }
+
+            var preScrollTop = 0;
+            window.onscroll = function(){
+                var scrollTop = document.body.scrollTop>document.documentElement.scrollTop?document.body.scrollTop:document.documentElement.scrollTop;
+                var diff = scrollTop - preScrollTop;
+                preScrollTop = scrollTop;
+                for(var i= 0,len=wrap_divs.length; i<len ; i++){
+                    wrap_divs[i].style.backgroundPositionY = parseInt(wrap_divs[i].style.backgroundPositionY) + Math.floor(diff/2)+'px';
+                }
+                //console.log(preScrollTop);
+            };
+        }
+    </script>
+</body>
+</html>

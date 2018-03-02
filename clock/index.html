@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            background-color: #1CAACB!important;
+        }
+        #wrapCvs{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        #clock1,#clock2{
+            position: absolute;
+        }
+        #clock1{
+            z-index: 2;
+        }
+        #clock2{
+            z-index: 3;
+        }
+    </style>
+    <title>clock</title>
+</head>
+<body>
+    <div id="wrapCvs">
+        <canvas id="clock1" width="300" height="300">静态部分</canvas>
+        <canvas id="clock2" width="300" height="300">动态部分</canvas>
+    </div>
+    <script>
+        window.onload = clock;
+
+        var clock_1 = {},
+            clock_2 = {};
+        // 用于计算弧度(此处约等于0.000105)
+        var temp_ms = parseFloat((Math.PI/(250*120)).toFixed(6));
+
+        function clock(){
+            clock_1.that = document.querySelector('#clock1');
+            clock_1.ctx = clock_1.that.getContext('2d');
+            clock_1.width = clock_1.that.clientWidth;
+            clock_1.height = clock_1.that.clientHeight;
+
+            clock_2.that = document.querySelector('#clock2');
+            clock_2.ctx = clock_2.that.getContext('2d');
+            clock_2.width = clock_2.that.clientWidth;
+            clock_2.height = clock_2.that.clientHeight;
+
+            // 字体
+            clock_1.fontSize = 18;
+            clock_2.fontSize = 18;
+
+            var date = new Date(),
+                _h = date.getHours() % 12,
+                _m = date.getMinutes(),
+                _s = date.getSeconds(),
+                _ms = date.getMilliseconds();
+            var count = '';
+
+            drawStaticPart(clock_1);
+
+            drawAnimationPart(clock_2 , countNeedleRadians(_h,_m,_s,_ms));
+            // console.log(`h: ${_h}, m: ${_m}, s: ${_s}, ms: ${_ms}`);
+            // requestAnimationFrame(animation);      
+            animation();      
+        }
+        function animation(){
+            var date = new Date(),
+                _h = date.getHours() % 12,
+                _m = date.getMinutes(),
+                _s = date.getSeconds(),
+                _ms = date.getMilliseconds();
+
+            
+            drawAnimationPart(clock_2 , countNeedleRadians(_h,_m,_s,_ms));
+            // requestAnimationFrame(animation);
+            setTimeout(animation,333);
+        }
+        function drawStaticPart(clock){
+            var dight = [12,3,6,9],
+                fontSize = clock.fontSize,
+                fontFamily = "serif",
+                ctx = clock.ctx;
+            
+            // 绘制3,6,9,12数字
+            ctx.font = fontSize + 'px ' + fontFamily;
+            ctx.lineWidth = 0.5;
+            ctx.fillStyle = '#ffffff';
+
+            ctx.fillText(dight[0] , (clock.width - fontSize)/2 , fontSize-6);
+            ctx.fillText(dight[1] , clock.width - fontSize/2 , (clock.height+fontSize/2)/2);
+            ctx.fillText(dight[2] , (clock.width - fontSize/4)/2 , clock.height);
+            ctx.fillText(dight[3] , 0 , (clock.height+fontSize/2)/2);
+
+            // 绘制圆弧
+            var tempUnit = Math.PI/2,     // 整圆弧度2*PI
+                fontRadius = fontSize/360;
+            ctx.strokeStyle = '#ffffff';
+            
+            ctx.beginPath();
+            ctx.arc(clock.width/2 , clock.height/2 , clock.width/2-fontSize/3 , fontRadius , tempUnit - fontRadius*1.2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(clock.width/2 , clock.height/2 , clock.width/2-fontSize/3 , tempUnit + fontRadius/2 , 2*tempUnit-fontRadius);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(clock.width/2 , clock.height/2 , clock.width/2-fontSize/3 , 2*tempUnit + fontRadius*1.4 , 3*tempUnit-fontRadius*1.2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(clock.width/2 , clock.height/2 , clock.width/2-fontSize/3 , 3*tempUnit + fontRadius*1.4 , 4*tempUnit-fontRadius*1.4);
+            ctx.stroke();
+
+            /* !!!!修改ctx相对的中心!!!! */
+            ctx.translate(clock.width/2 , clock.height/2);
+
+            // 绘制计时线
+            var startRadius = 0,
+                endRadius = 0,
+                lineWidth = 1,
+                lineQuantity = 180,
+                lineDistance = 360/lineQuantity;
+            
+            ctx.strokeStyle = '#e1e1e1';
+            ctx.lineWidth = lineWidth;
+
+            // 绘制一圈短线
+            for(var i=0; i<lineQuantity ; i++){
+                ctx.beginPath();
+                ctx.moveTo(0 , -clock.height*0.7/2);
+                ctx.lineTo(0 , -clock.height*0.8/2);
+                ctx.stroke();
+                ctx.rotate(Math.PI*2/lineQuantity);
+            }
+
+            // 绘制中心指针圈
+            var centerCircleRadius = clock.width/50,
+                centerCircleLineWidth = clock.width/65;
+            ctx.lineWidth = centerCircleLineWidth;
+            ctx.strokeStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(0,0,centerCircleRadius,0,2*Math.PI);
+            ctx.stroke();
+            ctx.closePath();
+        }
+        function drawAnimationPart(clock , radians){
+            var ctx = clock.ctx,
+                fontSize = clock.fontSize;
+            
+            ctx.save();
+            ctx.clearRect(0,0,clock.width,clock.height);
+
+            ctx.translate(clock_2.width/2,clock_2.height/2);
+            ctx.lineCap = 'round';
+
+            // 时针 
+            ctx.save();
+            ctx.beginPath();
+            ctx.rotate(radians[2]);
+            ctx.lineWidth = clock.width/80;
+            ctx.strokeStyle = '#ffffff';
+
+            ctx.moveTo(0,-clock.width/50);
+            ctx.lineTo(0,-clock.width*0.25);//针长0.25w
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            // 分针 
+            ctx.save();
+            ctx.beginPath();
+            ctx.rotate(radians[1]);
+            ctx.lineWidth = clock.width/90;
+            ctx.strokeStyle = 'rgba(255,255,255,.75)';
+
+            ctx.moveTo(0,-clock.width/50);
+            ctx.lineTo(0,-clock.width*0.3);//分长0.3w
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            // 秒针(三角形)
+            var triangle_sl = clock.width*0.04,
+                // Math.cos(x) x为弧度非角度 30弧度=2*PI*30/360
+                cos30_tsl = triangle_sl*Math.cos(Math.PI/60); 
+
+            ctx.save();
+            ctx.beginPath();
+            ctx.rotate(radians[0]);
+            ctx.fillStyle = 'rgba(255,255,255,.8)';
+
+            ctx.moveTo(0 , -clock.height*0.34);
+            ctx.lineTo(-triangle_sl/2 , -clock.height*0.34+cos30_tsl); 
+            ctx.lineTo(triangle_sl/2 , -clock.height*0.34+cos30_tsl); 
+            ctx.lineTo(0 , -clock.height*0.34);   
+            ctx.fill();      
+            ctx.closePath();  
+            // 外围1圈白线共180根，覆盖1/6,线条间距不变
+            var lineQuantity = 45;
+            var opacity = 1;
+            
+            ctx.strokeStyle = 'rgba(255,255,255,1)'; // 至#e1e1e1
+            ctx.lineWidth = 1;
+
+            // 绘制一圈短线
+            for(var i=0; i<lineQuantity ; i++){
+                ctx.beginPath();
+                ctx.moveTo(0 , -clock.height*0.7/2);
+                ctx.lineTo(0 , -clock.height*0.8/2);
+                ctx.stroke();
+                ctx.rotate(-Math.PI*2/180);
+
+                opacity -= 0.022;
+                ctx.strokeStyle = `rgba(255,255,255,${opacity})`;
+            }
+            ctx.closePath();  
+            ctx.restore();
+
+            ctx.restore();
+        }
+        function countNeedleRadians(h,m,s,ms){
+            // 弧度=2*PI*角度/360
+            /*
+             *  秒针偏移的弧度(按ms计算)
+             *  公式： 2*PI* ( ((1000*s+ms) / (60*1000)) * 360 ) / 360
+             *  简化：PI*(1000*s+ms) / 250*120
+             */ 
+            /*
+             *  分针偏移的弧度(按s计算)
+             *  公式： 2*PI* (((60*m+s) / 3600) * 360 ) / 360
+             *  简化：(PI*(60m+s)) / 1800
+             */ 
+            /*
+             *  时针偏移的弧度(按s计算)
+             *  公式： 2*PI* (((3600h+60*m+s) / (3600*24)) * 360 ) / 360
+             *  简化：(PI*( 3600h+60m+s )) / (3600*6)
+             */ 
+            // console.log(`h: ${(Math.PI*temp / 1800).toFixed(2)}, m: ${(Math.PI*temp / 1800).toFixed(2)}, s: ${((Math.PI*(3600*h+temp)) / (6*3600)).toFixed(2)}`);
+            
+            // console.log(`h: ${h}, m: ${m}, s: ${s}, ms: ${ms}`);
+            // console.log(`ms弧度: ${temp_ms}`);
+            // 用于计算指针角度
+            var temp = 60*m+s;
+            return [
+                parseFloat(((1000*s+ms) * temp_ms).toFixed(2)),
+                parseFloat((Math.PI*temp / 1800).toFixed(2)),
+                parseFloat(((Math.PI*(3600*h+temp)) / (6*3600)).toFixed(2))
+                // parseFloat(((Math.PI*s) / 30).toFixed(4)),
+                // parseFloat(((Math.PI*m) / 30).toFixed(4)),
+                // parseFloat(((Math.PI*h) / 6).toFixed(4))
+            ]; 
+        }
+    </script>
+</body>
+</html>

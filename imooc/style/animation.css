@@ -1,0 +1,42 @@
+/*
+ *  animation
+ */
+@keyframes moveToTop22{
+    from {top: 66px;}
+    to {top: 22px;}
+}
+@keyframes moveToTop50{
+    from {top: 118px;}
+    to {top: 50px;}
+}
+@keyframes shadowTo03 {
+    from {box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);}
+    to {box-shadow: 0 5px 10px 0 rgba(0,0,0,.3);}
+}
+@keyframes skewXTo480{
+    from {left: -150px;}
+    to {left: 480px;}
+}
+@keyframes opacityTo1 {
+    from {opacity: .5;}
+    to {opacity: 1;}
+}
+@keyframes topTo-100{
+    from {top: 0;}
+    to {top: -100px;}
+}
+
+@keyframes hidden {
+    0%   {opacity: 1;}
+    25%  {opacity: 0.75;}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.25;}
+    100% {opacity: 0;}
+}
+@keyframes block {
+    0%   {opacity: 0;}
+    25%  {opacity: 0.25;}
+    50%  {opacity: 0.5;}
+    75%  {opacity: 0.75;}
+    100% {opacity: 1;}
+}

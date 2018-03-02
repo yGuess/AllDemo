@@ -1,0 +1,192 @@
+html,body{ 
+    height: 100%; 
+    min-height: 100%;
+    overflow: hidden;
+    margin: 0; 
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Hiragino Sans GB,Microsoft Yahei,Microsoft Jhenghei,sans-serif;
+box-sizing: border-box;
+    font-weight: 400;
+}
+::-webkit-input-placeholder{
+    color: #fff;
+}
+.container{
+    height: 100%;
+    background: #50a3a2;
+    background: -webkit-linear-gradient(top left,#50a3a2 0,#53e3a6);
+    background: linear-gradient(to bottom right,#50a3a2 0,#53e3a6);
+}
+#loginForm{
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 230px;
+    height: 400px;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+}
+#loginForm h2{
+    font-size: 24px;
+    font-weight: 400;
+}
+#loginForm .input-box{
+    outline: 0;
+    border: 1px solid hsla(0,0%,100%,.4);
+    background-color: hsla(0,0%,100%,.2);
+    width: 250px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+    font-weight: 300;
+}
+#loginForm .input-box:focus{
+    background-color: #fff;
+    width: 300px;
+    color: #53e3a6;
+}
+#loginForm .btn-submit{
+    outline: 0;
+    background-color: #fff;
+    border: 0;
+    padding: 10px 15px;
+    color: #53e3a6;
+    border-radius: 3px;
+    width: 250px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+    box-sizing: content-box;
+}
+.bg-bubbles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+.bubbles{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.bubbles li{
+    position: absolute;
+    list-style: none;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: hsla(0,0%,100%,.15);
+    bottom: -160px;
+    opacity: 0.5;
+}
+.bubbles .square{
+    -webkit-animation: square 25s;
+    animation: square 25s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+.bubbles li:nth-child(1){
+    left: 5%;
+}
+.bubbles li:nth-child(2){
+    left: 10%;
+}
+.bubbles li:nth-child(3){
+    left: 20%;
+}
+.bubbles li:nth-child(4){
+    left: 30%;
+}
+.bubbles li:nth-child(5){
+    left: 40%;
+}
+.bubbles li:nth-child(6){
+    left: 50%;
+}
+.bubbles li:nth-child(7){
+    left: 60%;
+}
+.bubbles li:nth-child(8){
+    left: 70%;
+}
+.bubbles li:nth-child(9){
+    left: 80%;
+}
+.bubbles li:nth-child(10){
+    left: 90%;
+}
+.bubbles .w10{
+    width: 10px;
+    height: 10px;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-duration: 40s;
+    animation-duration: 40s;
+    background-color: hsla(0,0%,100%,.3);
+}
+.bubbles .w20{
+    width: 20px;
+    height: 20px;
+    -webkit-animation-delay: 15s;
+    animation-delay: 15s;
+    -webkit-animation-duration: 40s;
+    animation-duration: 40s;
+}
+.bubbles .w60{
+    width: 60px;
+    height: 60px;
+    -webkit-animation-duration: 22s;
+    animation-duration: 22s;
+    background-color: hsla(0,0%,100%,.25);
+}
+.bubbles .w80{
+    width: 80px;
+    height: 80px;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-duration: 17s;
+    animation-duration: 17s;
+}
+.bubbles .w120{
+    width: 120px;
+    height: 120px;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+    background-color: hsla(0,0%,100%,.2);
+}
+.bubbles .w160{
+    width: 160px;
+    height: 160px;
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
+}
+
+@keyframes square {
+    0% {
+      opacity: 0.5;
+      transform: translateY(0px) rotate(45deg);
+    }
+    25% {
+      opacity: 0.75;
+      transform: translateY(-400px) rotate(90deg)
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-600px) rotate(135deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-1000px) rotate(180deg);
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <style>
+        html,body{
+            margin: 0;
+        }
+        #demo{
+            position: relative;
+            border-left: solid 1px #cacaca;
+            border-right: solid 1px #cacaca;
+        }
+        .box{
+            float: left;
+            padding: 15px;
+            margin-top: 15px;
+            margin-left: 15px;
+            border: solid 1px #ccc;
+            box-shadow: 0 0 5px #ccc;
+        }
+        .box img{
+            width: 160px;
+            height: auto;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <div class="box"><img src="images/0.jpg" /></div>
+        <div class="box"><img src="images/1.jpg" /></div>
+        <div class="box"><img src="images/2.jpg" /></div>
+        <div class="box"><img src="images/3.jpg" /></div>
+        <div class="box"><img src="images/4.jpg" /></div>
+        <div class="box"><img src="images/5.jpg" /></div>
+        <div class="box"><img src="images/6.jpg" /></div>
+        <div class="box"><img src="images/7.jpg" /></div>
+        <div class="box"><img src="images/8.jpg" /></div>
+        <div class="box"><img src="images/9.jpg" /></div>
+        <div class="box"><img src="images/10.jpg" /></div>
+        <div class="box"><img src="images/11.jpg" /></div>
+        <div class="box"><img src="images/12.jpg" /></div>
+        <div class="box"><img src="images/13.jpg" /></div>
+        <div class="box"><img src="images/14.jpg" /></div>
+        <div class="box"><img src="images/15.jpg" /></div>
+        <div class="box"><img src="images/16.jpg" /></div>
+        <div class="box"><img src="images/17.jpg" /></div>
+        <div class="box"><img src="images/18.jpg" /></div>
+        <div class="box"><img src="images/19.jpg" /></div>
+        <div class="box"><img src="images/20.jpg" /></div>
+        <div class="box"><img src="images/21.jpg" /></div>
+        <div class="box"><img src="images/22.jpg" /></div>
+        <div class="box"><img src="images/23.jpg" /></div>
+        <div class="box"><img src="images/24.jpg" /></div>
+        <div class="box"><img src="images/25.jpg" /></div>
+        <div class="box"><img src="images/26.jpg" /></div>
+        <div class="box"><img src="images/27.jpg" /></div>
+        <div class="box"><img src="images/28.jpg" /></div>
+        <div class="box"><img src="images/29.jpg" /></div>
+    </div>
+    <script>
+        window.onload = function(){
+            var demo = document.getElementById('demo');
+            var boxLists = demo.getElementsByTagName('div');
+
+            //每个box的margin-top与margin-left值相等
+            var marginV = 15;
+            var demoW = (boxLists[0].offsetWidth+marginV)*6;
+            demo.style.width = demoW　+ 'px';
+            demo.style.margin = '0 auto';
+
+            waterFall(marginV,0);
+
+            window.onscroll = function(){
+               addBox();
+            }
+        }
+        function waterFall(mV,startPos){
+            var boxes = document.getElementById('demo').getElementsByTagName('div');
+            var boxesH = [];
+            for(var i=0; i<boxes.length ;i++){
+                if(i < 6){
+                    boxesH[i] = boxes[i].offsetHeight;
+                }else{
+                    var minH = Math.min.apply(null,boxesH);
+                    var pos = getMinIndex(boxesH,minH);
+
+                    boxes[i].style.position = 'absolute';
+                    boxes[i].style.top = minH + mV + 'px';
+                    boxes[i].style.left = (boxes[0].offsetWidth+mV)*pos + 'px';
+                    boxesH[pos] += boxes[i].offsetHeight + mV;
+                }
+            }
+            console.log(boxesH);
+        }
+
+        function getMinIndex(lists,minV){
+            for(var i in lists){
+                if(lists[i] == minV){
+                    return i;
+                }
+            }
+        }
+
+        function addBox(){
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
+            var parent = document.getElementById('demo');
+            var arr = parent.getElementsByTagName('div');
+            var clientHeight = document.documentElement.clientHeight; //获取当前页面视口高度
+            var c = 1;
+
+            while((arr[arr.length-c].offsetTop < scrollTop + clientHeight)&&c<4){
+                var oDiv = document.createElement('div');
+                oDiv.className = 'box';
+
+                var oImg = document.createElement('img');
+                oImg.src = 'images/' + Math.floor(Math.random()*97) + '.jpg';
+                oDiv.appendChild(oImg);
+
+                parent.appendChild(oDiv);
+            }
+            var len = parent.getElementsByTagName('div').length;
+            waterFall(15 , len-c+1);
+
+        }
+
+    </script>
+</body>
+</html>

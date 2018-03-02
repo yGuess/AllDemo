@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>电商图片局部放大展示效果</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        #demo{
+            position: relative;
+            margin: 20px 30px;
+        }
+        #smallBox{
+            position: relative;
+            display: inline-block;
+            border: solid 1px #cacaca;
+        }
+        #mask{
+            position: absolute;
+            cursor: move;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            z-index: 10;
+        }
+        #filter{
+            display: none;
+            width: 120px;
+            height: 80px;
+            position: absolute;
+            z-index: 9;
+            background: #ffffcc;
+            border: 1px solid #ccc;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+        #bigBox{
+            border: solid 1px #cacaca;
+            display: none;
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 50px;
+            left: 450px;
+            overflow: hidden;
+            z-index: 9;
+        }
+        #bigBox img{
+            position: absolute;
+            z-index: 8;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <div id="smallBox">
+            <div id="mask"></div>
+            <div id="filter"></div>
+            <img src="images/macbook-small.jpg" alt="展示IMG"/>
+        </div>
+        <div id="bigBox">
+            <img src="images/macbook-big.jpg" alt="局部展示IMG"/>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+            var demo = document.getElementById('demo');
+            var filter = document.getElementById('filter');
+            var smallBox = document.getElementById('smallBox');
+            var bigBox = document.getElementById('bigBox');
+            var bigImg = bigBox.getElementsByTagName('img')[0];
+            var mask = document.getElementById('mask');
+            console.info(demo.offsetTop + " "+demo.offsetLeft+"\n");
+            console.info(smallBox.offsetTop + " "+smallBox.offsetLeft+"\n");
+            console.info(filter.offsetWidth + " "+filter.offsetHeight+"\n");
+
+            mask.onmouseover = function(){
+                filter.style.display = 'block';
+                bigBox.style.display = 'block';
+            }
+            mask.onmouseout = function(){
+                filter.style.display = 'none';
+                bigBox.style.display = 'none';
+            }
+            mask.onmousemove = function(event){
+                var e = event || window.event;
+                //计算filter与父容器在x y方向上距离
+                var top = e.clientY - demo.offsetTop - smallBox.offsetTop - filter.offsetHeight/2;
+                var left = e.clientX - demo.offsetLeft - smallBox.offsetLeft - filter.offsetWidth/2;
+
+                //filter只能在父容器内 故其在父容器内移动距离为父容器宽高减去filter宽高
+                if(top <= 0){
+                    top = 0;
+                } else if(top >= smallBox.offsetHeight - filter.offsetHeight){
+                    top = smallBox.offsetHeight - filter.offsetHeight;
+                }
+
+                if(left <= 0){
+                    left = 0;
+                } else if(left >= smallBox.offsetWidth - filter.offsetWidth){
+                    left = smallBox.offsetWidth - filter.offsetWidth;
+                }
+
+                filter.style.top = top + 'px';
+                filter.style.left = left + 'px';
+
+                //smallBox与bigBox宽高成比例  两张图宽高也成比例
+                //上面说过filter只能在父容器内移动 所以filter在smallBox中距顶部的距离，与bigBox距bigIMG顶部距离等距
+                //top/(smallBox.offsetHeight - filter.offsetHeight) 计算filter距smallBox顶部距离与filter可移动高度的百分比
+                //(bigImg.offsetHeight-bigBox.offsetHeight) 计算bigBox在bigIMG中可移动距离
+                var moveToPosY = -(bigImg.offsetHeight-bigBox.offsetHeight)*top/(smallBox.offsetHeight - filter.offsetHeight);
+                var moveToPosX = -(bigImg.offsetWidth-bigBox.offsetWidth)*left/(smallBox.offsetWidth - filter.offsetWidth);
+                bigImg.style.top = moveToPosY + 'px';
+                bigImg.style.left = moveToPosX + 'px';
+            }
+        }
+    </script>
+</body>
+</html>

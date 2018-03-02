@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <script src="jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="js.js" charset="GBK"></script>
+    <title></title>
+</head>
+<body>
+    <div class="page">
+        <div class="score">0</div>
+        <div class="container">
+            <div id="bird"></div>
+            <div class="tube-container" style="left: 0px"></div>
+        </div>
+        <div class="floor"></div>
+    </div>
+    <div class="pop-start">
+        <h3>通过空格或者方向上键控制</h3>
+        <img src="images/reLoad.png" class="startBtn" title="开始游戏"/>
+    </div>
+    <div class="pop-reload">
+        <p class="get-score">11</p>
+        <img src="images/reLoad.png" class="reload-btn" title="重新开始"/>
+    </div>
+    <audio id="audio-hit" src="sounds/sfx_hit.ogg"></audio>
+    <audio id="audio-die" src="sounds/sfx_die.ogg"></audio>
+    <audio id="audio-wing" src="sounds/sfx_wing.ogg"></audio>
+    <audio id="audio-point" src="sounds/sfx_point.ogg"></audio>
+</body>
+</html>

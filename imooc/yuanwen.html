@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/reset.css"/>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/animation.css" />
+    <title>我的猿问</title>
+</head>
+<body>
+    <div id="header">
+        <div class="logo"><a href="index.html" target="_self"></a></div>
+        <div class="header-nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="shizhan.html">实战</a></li>
+                <li><a href="path.html">路径</a></li>
+                <li class="h-active"><a href="yuanwen.html">猿问</a></li>
+                <li><a href="note.html">手记</a></li>
+            </ul>
+        </div>
+        <div class="login-area">
+            <ul>
+                <li><a href="#"><span class="icon-appdownload"></span></a></li>
+                <li><a href="#"><span class="icon-msg-remind"></span></a></li>
+                <li><a href="#"><span class="icon-my-msg"></span></a></li>
+                <li><a href="#"><img class="icon-user" src="images/icon/icon-user2.jpg"/></a></li>
+            </ul>
+        </div>
+        <div class="header-search">
+            <span class="search-btn"></span>
+            <input class="hidden search-input" type="text"/>
+        </div>
+    </div>
+    <div class="wrap-main yuanwen clearfix">
+        <div class="wenda-main fleft">
+            <div class="wd-top">
+                <span>程序员自己的问答社区</span>
+                <a href="#" class="tw-btn">我要提问</a>
+            </div>
+            <div class="wd-nav">
+                <a class="active" href="#">推荐</a>
+                <a href="#">最新</a>
+                <a href="#">等待回答</a>
+            </div>
+            <div class="wd-recommend">
+                <ul class="rec-list">
+                    <li><a href="#"><span class="g-flag"></span>边分享，边成长 ----私密有料的面试经验谈</a></li>
+                    <li><a href="#"><span class="g-flag"></span>积分商城上线，超多好礼等你来兑</a></li>
+                </ul>
+            </div>
+            <div class="wd-list">
+                <div class="ques-answer">
+                    <div class="tag-img"><a href="#"><img src="images/yuanwen/html.png"/></a></div>
+                    <div class="wd-xx">
+                        <div class="wd-tag">
+                            <span>来自</span>
+                            <a href="#">Html/CSS</a>
+                            <a href="#">JavaScript</a>
+                            <a href="#">JQuery</a>
+                        </div>
+                        <div class="wd-title">
+                            <a href="#">为什么js命名变量名时，经常在前面加个o，如oDiv等等</a>
+                        </div>
+                        <div class="wd-answer">
+                            <p class="answer-user"><a href="#">hhxx999</a> 回答：</p>
+                            <p class="answer-cont">表明该变量的数据类型。例：oImg 表示 图像对象aImg 表示 图像对象数组</p>
+                            <div class="wd-bottom-bar">
+                                <span class="wd-agree">赞同 2</span>
+                                <span class="wd-against">反对</span>
+                                <span class="wd-share">分享</span>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ques-answer">
+                    <div class="tag-img"><a href="#"><img src="images/yuanwen/css3.png"/></a></div>
+                    <div class="wd-xx">
+                        <div class="wd-tag">
+                            <span>来自</span>
+                            <a href="#">CSS3</a>
+                        </div>
+                        <div class="wd-title">
+                            <a href="#">为什么js命名变量名时，经常在前面加个o，如oDiv等等</a>
+                        </div>
+                        <div class="wd-answer">
+                            <a class="write-btn" href="#">撰写答案</a>
+                            <p class="answer-info"><a href="#">回答问题最高可获<span>3积分</span>哦！</a></p>
+                            <a class="answer-num" href="#">2个回答</a>
+                            <a class="follow" href="#">关注</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="page">
+                <li><a class="page_disabled" href="#">首页</a></li>
+                <li><a class="page_disabled" href="#">上一页</a></li>
+                <li><a class="active" href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">下一页</a></li>
+                <li><a href="#">尾页</a></li>
+            </ul>
+        </div>
+        <div class="wenda-side fright">
+            <div class="recommend-class">
+                <div class="class-title">
+                    <h3>推荐分类</h3>
+                    <span>全部分类</span>
+                </div>
+                <ul class="class-list">
+                    <li><a href="#">
+                        <div class="class-info">
+                            <div class="tag-img">
+                                <a href="#"><img src="images/yuanwen/js.png"/></a>
+                            </div>
+                            <h4>PHP</h4>
+                            <p class="follow-num">24785人关注</p>
+                            <a class="follow" href="#">关注</a>
+                        </div>
+                        <p class="class-desc">PHP一种被广泛应用的开放源代码的多用途脚本语言，和其他技术相比，p...</p>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="class-info">
+                            <div class="tag-img">
+                                <a href="#"><img src="images/yuanwen/python.png"/></a>
+                            </div>
+                            <h4>PHP</h4>
+                            <p class="follow-num">24785人关注</p>
+                            <a class="follow" href="#">关注</a>
+                        </div>
+                        <p class="class-desc">Python是一种面向对象、解释型计算机程序设计语言；Python语...</p>
+                    </a></li>
+                    <li><a href="#">
+                        <div class="class-info">
+                            <div class="tag-img">
+                                <a href="#"><img src="images/yuanwen/html.png"/></a>
+                            </div>
+                            <h4>PHP</h4>
+                            <p class="follow-num">24785人关注</p>
+                            <a class="follow" href="#">关注</a>
+                        </div>
+                        <p class="class-desc">html是HyperText Mark-up Language的简称...</p>
+                    </a></li>
+                </ul>
+                <div class="advertisement"><a href="#"><img src="images/yuanwen/advertisement.jpg" /></a></div>
+                <div class="hot-ques">
+                    <h3>热门问题</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <p class="ques-cont">刷分零容忍！发布用户id1949284的处罚公告</p>
+                                <div class="info">
+                                    <a class="maR30" href="#">156回答</a>
+                                    <a class="maR30" href="#">22人关注</a>
+                                    <a class="fright maT3" href="#">来自Android</a>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="leife-sort">
+                    <div class="lf-title">
+                        <span class="lf-h3">回答雷锋班</span>
+                        <span class="lf-tab">一周</span>
+                        <span class="lf-tab active">今日</span>
+                    </div>
+                    <ul class="lf-sort-list">
+                        <li>
+                            <a href="#">
+                                <span class="ranking lf-first">1</span>
+                                <div class="lf-user">
+                                    <img src="images/yuanwen/lf-user1.jpg"/>
+                                </div>
+                                <div class="lf-username">
+                                    <a href="#">tangjunfeng</a>
+                                </div>
+                                <div class="lf-user-info">
+                                    <span>全栈工程师</span>
+                                    <span class="fright">16回答</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ranking lf-second">2</span>
+                                <div class="lf-user">
+                                    <img src="images/yuanwen/lf-user2.jpg"/>
+                                </div>
+                                <div class="lf-username">
+                                    <a href="#">tangjunfeng</a>
+                                </div>
+                                <div class="lf-user-info">
+                                    <span>全栈工程师</span>
+                                    <span class="fright">16回答</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ranking lf-third">3</span>
+                                <div class="lf-user">
+                                    <img src="images/yuanwen/lf-user3.jpg"/>
+                                </div>
+                                <div class="lf-username">
+                                    <a href="#">tangjunfeng</a>
+                                </div>
+                                <div class="lf-user-info">
+                                    <span>全栈工程师</span>
+                                    <span class="fright">16回答</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ranking">4</span>
+                                <div class="lf-user">
+                                    <img src="images/yuanwen/lf-user4.jpg"/>
+                                </div>
+                                <div class="lf-username">
+                                    <a href="#">tangjunfeng</a>
+                                </div>
+                                <div class="lf-user-info">
+                                    <span>全栈工程师</span>
+                                    <span class="fright">16回答</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="other-lf"><span>显示另外5个雷锋</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="clearfix">
+        <div>
+            <div class="footer-left">
+                <ul class="footer-link1 clearfix">
+                    <li><a href="#">网站首页</a></li>
+                    <li><a href="#">人才招聘</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">慕课云</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">讲师招募</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">友情链接</a></li>
+                </ul>
+                <p>Copyright ? 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+            </div>
+            <div class="footer-right">
+                <a href="#">
+                    <span class="footer-weixin" title="微信"></span>
+                    <div class="weixin-ewm hidden"></div>
+                </a>
+                <span class="footer-weibo" title="微博"></span>
+                <span class="footer-qzone" title="QQ空间"></span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

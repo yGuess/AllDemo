@@ -1,0 +1,42 @@
+:global{
+    .displayBox{
+        margin-bottom: .26667rem;
+        background-color: #fff;
+    }
+    .oneLine{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .twoLine{
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+    }
+    .clearfix::after{
+        content: '';
+        display: block;
+        overflow: hidden;
+        zoom: 1;
+        clear: both;
+    }
+    .icon{
+        display: inline-block;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .bgImg{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大转盘</title>
+    <style>
+        .content{
+            width: 500px;
+            height: 500px;
+            margin: 20px auto 0;
+            position: relative;
+            border-radius: 50%;
+            background-color: #24c7b8;
+        }
+        .turntable{
+            width: 90%;
+            height: 90%;
+            list-style: none;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0px 0px 12px 2px #152c3c;
+            -webkit-padding-start: 0;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+            font-size: 16px;
+            color: #fff;
+            font-weight: bold;
+            transform-origin: center;
+            transform: rotateZ(0deg);
+            position: absolute;
+            z-index: 1;
+            top: 5%;
+            left: 5%;
+        }
+        .turntable li{
+            width: 0%;
+            height: 0%;
+            border-top: 270px solid #fff;
+            border-right: 72px solid transparent;
+            border-left: 72px solid transparent;
+            margin-left: -72px;
+            position: absolute;
+            left: 50%;
+            top: -10%;
+            z-index: 8;
+            transform-origin: center 270px 0px;
+        }
+        .turntable li:nth-child(even){
+            border-top-color: #18b373;
+        }
+        .turntable li:nth-child(odd){
+            border-top-color: #1b7b54;
+        }
+        .turntable li span{
+            position: absolute;
+            top: -200px;
+            left: 0;
+        }
+        .pointer{
+            width: 20%;
+            height: 20%;
+            line-height: 80px;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            z-index: 9;
+            background-color: #d0f1dd;
+            border-radius: 50%;
+        }
+        .pointer::after{
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 30px solid #d0f1dd;
+            border-left: 10px solid transparent;
+            top: -58px;
+            left: calc(50% - 10px);
+        }
+        .pointer p{
+            margin: 0;
+            background-color: #1cca69;
+            box-shadow: 0px 0px 8px -1px #2a924f;
+            width: 80%;
+            height: 80%;
+            text-align: center;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            z-index: 19;
+            top: 10%;
+            left: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul class="turntable">
+            <li><span>1</span></li>
+            <li style="transform: rotateZ(30deg);"><span>2</span></li>
+            <li style="transform: rotateZ(60deg);"><span>3</span></li>
+            <li style="transform: rotateZ(90deg);"><span>4</span></li>
+            <li style="transform: rotateZ(120deg);"><span>5</span></li>
+            <li style="transform: rotateZ(150deg);"><span>6</span></li>
+            <li style="transform: rotateZ(180deg);"><span>7</span></li>
+            <li style="transform: rotateZ(210deg);"><span>8</span></li>
+            <li style="transform: rotateZ(240deg);"><span>9</span></li>
+            <li style="transform: rotateZ(270deg);"><span>10</span></li>
+            <li style="transform: rotateZ(300deg);"><span>11</span></li>
+            <li style="transform: rotateZ(330deg);"><span>12</span></li>
+        </ul>
+        <div class="pointer" >
+            <p>开始抽奖</p>
+        </div>
+    </div>
+    <script>
+        let turntable = document.querySelector('.turntable'),
+            pointer = document.querySelector('.pointer');
+        
+        let data;
+
+        window.addEventListener('DOMContentLoaded' , init)
+
+        function init(){
+            pointer.addEventListener('click' , startRotate)
+        }
+
+        function startRotate(){
+            data = prepareData();
+            console.log(data);
+            data.rotateState = 'plus';
+            window.requestAnimationFrame(rotate);
+        }
+        function rotate(){
+            turntable.style.transform = "rotateZ("+data.initDeg+"deg)";
+            data.initDeg += data.step;
+
+            // 加速
+            if(data.step < data.maxStep && data.rotateState == 'plus'){
+                data.step += data.stepPlus;
+            }
+            // 减速
+            else if(data.initDeg >= data.minDeg - data.restDeg){
+                data.step -= data.stepLess;
+                data.rotateState = 'less';
+            }
+
+            if(data.initDeg >= data.minDeg && data.initDeg <= data.maxDeg && data.step < 0){
+                alert(data.result);
+                resetTurntable();
+                console.log(`step: ${data.step}, deg: ${data.initDeg}`);
+            }else{
+                window.requestAnimationFrame(rotate);
+            }
+        }
+        function prepareData(number){
+            number = number || 12;
+            // let numbersDeg = {
+            //     1: [-11,11],
+            //     12: [20,41],
+            //     11: [50,71],
+            //     10: [50,101],
+            //     9: [110,131],
+            //     8: [140,161],
+            //     7: [170,191],
+            //     6: [200,221],
+            //     5: [230,251],
+            //     4: [260,281],
+            //     3: [290,311],
+            //     2: [320,341],
+            // };
+            let everyDeg = 360 / number,
+                bufferDeg = 8, // 左右各缓冲4deg
+                numbersDeg = [];
+            // 每格所占的度数,算法参考上面的数组
+            let initCount = (everyDeg-bufferDeg)/2;
+
+            numbersDeg[1] = [-initCount , initCount];
+            for(let i=number ; i >= 2 ; i--){
+                numbersDeg[i+''] = [initCount+bufferDeg+1 , initCount+everyDeg];
+                initCount += everyDeg;
+            }
+            // console.log(numbersDeg);
+
+            let randomValue = Math.floor(Math.random()*number)+1, // 随机被选中的数
+                rotateCount = Math.floor(Math.random()*3)+6, // 旋转6-8圈
+                maxStep = Math.floor(Math.random()*3)+6, // 每次角度变化最大为6-8(deg)
+                stepPlus = 0.05, // 角度变化增加的度数
+                stepLess = 0.02, // 角度变化衰减的度数
+                step = 0, // 初始变化的角度
+                initDeg = 0; // 初始转过角度
+                console.log(numbersDeg)
+            let totalDeg = rotateCount * 360,
+                maxDeg = totalDeg + numbersDeg[randomValue][1],
+                minDeg = totalDeg + numbersDeg[randomValue][0],
+                // 每次变化的角度在衰减过程中是等差数列，则在衰减过程中会转过的度数之和
+                // 公式 ((startStep + maxStep) * n) / 2
+                restDeg = (maxStep * (maxStep / stepLess)) /2;
+            return {
+                result: randomValue,
+                maxDeg: maxDeg,
+                minDeg: minDeg,
+                maxStep: maxStep,
+                step: 0,
+                initDeg: 0,
+                stepPlus: stepPlus, 
+                stepLess: stepLess, 
+                restDeg: restDeg,
+                rotateState: 'stop' // 当前转盘状态['plus','less','stop'] 
+            };
+        }
+        function resetTurntable(){
+            turntable.style.transform = 'rotateZ(0deg)';
+        }
+    
+    </script>
+</body>
+</html>

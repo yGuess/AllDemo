@@ -1,0 +1,59 @@
+.exploreBanners{
+    overflow: hidden;
+    padding: .61333rem 0 .72rem;
+    background-color: #fff;
+}
+.eBannerItems{
+    display: flex;
+    white-space: nowrap;
+    transform: translateX(0px);
+}
+.eBannerItems li{
+    flex-shrink: 0;
+}
+.eBannerItems li a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 7.69333rem;
+    height: 4.26667rem;
+    border-radius: .10667rem;
+    margin-left: .8rem;
+    color: #fff;
+    float: left;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition-duration: 0.3s;
+}
+.eBannerItems li a.active{
+    transform: scale(1.13692,1.13692);
+}
+.eBannerItems li a .ctx{
+    position: absolute;
+    left: .38667rem;
+    top: .66667rem;
+}
+.eBannerItems .title{
+    margin: 0 .18667rem .32rem;
+    font-size: .23333rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.eBannerItems .title::before,
+.eBannerItems .title::after{
+    content: ' ';
+    display: block;
+    width: .37333rem;
+    height: 1px;
+    background-color: #FFF;
+}
+.eBannerItems .desc{
+    font-size: .42667rem;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: .14667rem;
+    font-weight: 700;
+}

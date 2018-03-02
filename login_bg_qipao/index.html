@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>登录页</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <form id="loginForm" name="loginForm" action="" method="POST">
+                <h2>欢迎,请登陆</h2>
+                <input class="input-box" name="account" type="text" placeholder="请输入账户">
+                <input class="input-box" name="pwd" type="password" placeholder="请输入密码">
+                <input class="btn-submit" name="submit" type="submit" onsubmit="">
+            </form>
+        </div>
+        <div class="bg-bubbles">
+            <ul class="bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var bubbles,
+            resetTimer,
+            arr_w = [10,20,60,80,120,160],
+            arr_l = [5,10,20,30,40,50,60,70,80,90],
+            animEndEventNames
+
+        window.addEventListener('DOMContentLoaded', init)
+
+        // 初始化每一个气泡
+        // 启用监听器
+        function init(){
+            bubbles = document.querySelectorAll('li')
+
+            checkAnimationMode()
+
+            for(var i=0,len = bubbles.length; i<len; i++){
+                randomSetBubble(bubbles[i])
+
+                bubbles[i].addEventListener(animEndEventNames , function(){
+                    randomSetBubble(this)
+                })
+            }
+        }
+        // 随机设置气泡大小、动画时间
+        function randomSetBubble(ele){
+            var rw = arr_w[Math.floor(Math.random()*6)]
+            
+            ele.className = ''
+            
+            setTimeout(function(){
+                ele.className = 'w' + rw + ' square'
+            },220)
+        }
+        // 检测动画前缀
+        function checkAnimationMode(){
+            var aeen = {
+                    'webkitAnimation' : 'webkitAnimationEnd',
+                    'oAnimation' : 'oAnimationEnd',
+                    'msAnimation' : 'MSAnimationEnd',
+                    'animation' : 'animationend'
+                },
+                doc = document.documentElement || document.body
+            
+            for(var m in aeen){
+                if(doc.style[m] !== undefined){
+                    animEndEventNames = aeen[m]
+                    return
+                }
+            }
+        }
+    </script>
+</body>
+</html>

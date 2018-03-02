@@ -1,0 +1,19 @@
+.search{
+    height: .74667rem;
+    line-height: .74667rem;
+    font-size: .37333rem;
+    background-color: #ededed;
+    border-radius: .10667rem;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.iconSearch{
+    background: url(../../../assets/images/icons/img-icon-normal-search2-2fb94833aa.png) no-repeat;
+    background-size: 100% 100%;
+    width: .37333rem;
+    height: .37333rem;
+    margin-right: .13333rem;
+}

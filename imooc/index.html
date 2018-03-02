@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
+    <link rel="stylesheet" href="style/reset.css"/>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/animation.css" />
+    <title>我的慕课</title>
+</head>
+<body id="index">
+    <div id="header">
+        <div class="logo"><a href="index.html" target="_self"></a></div>
+        <div class="header-nav">
+            <ul>
+                <li><a href="shizhan.html">实战</a></li>
+                <li><a href="path.html">路径</a></li>
+                <li><a href="yuanwen.html">猿问</a></li>
+                <li><a href="note.html">手记</a></li>
+            </ul>
+        </div>
+        <div class="login-area">
+            <ul>
+                <li><a href="#"><span class="icon-appdownload"></span></a></li>
+                <li><a href="#"><span class="icon-msg-remind"></span></a></li>
+                <li><a href="#"><span class="icon-my-msg"></span></a></li>
+                <li><a href="#"><img class="icon-user" src="images/icon/icon-user2.jpg"/></a></li>
+            </ul>
+        </div>
+        <div class="header-search">
+            <span class="search-btn"></span>
+            <input class="hidden search-input" type="text"/>
+        </div>
+    </div>
+    <div id="banner-wrap">
+        <div class="menuwrap">
+            <ul>
+                <li data-id="a">
+                    <h4>前端开发</h4>
+                    <p>
+                        <a href="#">HTML/CSS</a>
+                        <a href="#">JavaScript</a>
+                        <a href="#" class="marginR0">HTML5</a>
+                    </p>
+                </li>
+                <li data-id="b">
+                    <h4>后端开发</h4>
+                    <p>
+                        <a href="#">PHP</a>
+                        <a href="#">Java</a>
+                        <a href="#">Linux</a>
+                        <a href="#" class="marginR0">C</a>
+                    </p>
+                </li>
+                <li data-id="c">
+                    <h4>移动开发</h4>
+                    <p>
+                        <a href="#">Android</a>
+                        <a href="#">iOS</a>
+                        <a href="#" class="marginR0">Cocos2d-x</a>
+                    </p>
+                </li>
+                <li data-id="d">
+                    <h4>数据处理</h4>
+                    <p>
+                        <a href="#">MySQL</a>
+                        <a href="#">MongoDB</a>
+                        <a href="#" class="marginR0">云计算</a>
+                    </p>
+                </li>
+                <li data-id="e">
+                    <h4>图像处理</h4>
+                    <p class="borderB0">
+                        <a href="#">PhotoShop</a>
+                        <a href="#">Maya</a>
+                        <a href="#" class="marginR0">Premiere</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="menuContent">
+            <div class="a hidden">
+                <h4>分类目录</h4>
+                <p>
+                    <a href="#">HTML/CSS</a><span>/</span>
+                    <a href="#">JavaScript</a><span>/</span>
+                    <a href="#">HTML5</a><span>/</span>
+                    <a href="#">CSS3</a><span>/</span>
+                    <a href="#">JQuery</a><span>/</span>
+                    <a href="#">WebApp</a><span>/</span>
+                    <a href="#">Node.js</a><span>/</span>
+                    <a href="#">AngularJS</a><span>/</span>
+                    <a href="#">Bootstrap</a><span>/</span>
+                    <a href="#">前端工具</a><span>/</span>
+                </p>
+                <h4>推荐</h4>
+                <p><a href="#">课程 | JavaScript深入浅出</a></p>
+                <p><a href="#">课程 | 玩转Bootstrap</a></p>
+                <p><a href="#">课程 | HTML5音乐可视化</a></p>
+            </div>
+            <div class="b hidden">
+                <h4>分类目录</h4>
+                <p>
+                    <a href="#">PHP</a><span>/</span>
+                    <a href="#">Java</a><span>/</span>
+                    <a href="#">Linux</a><span>/</span>
+                    <a href="#">Python</a><span>/</span>
+                    <a href="#">C</a><span>/</span>
+                    <a href="#">C++</a><span>/</span>
+                    <a href="#">Go</a><span>/</span>
+                    <a href="#">C#</a><span>/</span>
+                    <a href="#">数据结构</a><span>/</span>
+                </p>
+                <h4>推荐</h4>
+                <p><a href="#">课程 | 全面解析Java注解</a></p>
+                <p><a href="#">课程 | Linux软件安装管理</a></p>
+                <p><a href="#">课程 | 那些年你遇到的PHP错误与异常</a></p>
+            </div>
+            <div class="c hidden">
+                <h4>分类目录</h4>
+                <p>
+                    <a href="#">Android</a><span>/</span>
+                    <a href="#">iOS</a><span>/</span>
+                    <a href="#">Unity 3D</a><span>/</span>
+                    <a href="#">Cocos2d-x</a><span>/</span>
+                </p>
+                <h4>推荐</h4>
+                <p><a href="#">课程 | 玩儿转Swift2.0(第四季)</a></p>
+                <p><a href="#">课程 | iOS-健康App系列之迈出你的第一步</a></p>
+                <p><a href="#">课程 | Android面试解密-Layout_weight</a></p>
+            </div>
+            <div class="d hidden">
+                <h4>分类目录</h4>
+                <p>
+                    <a href="#">MySQL</a><span>/</span>
+                    <a href="#">MongoDB</a><span>/</span>
+                    <a href="#">云计算</a><span>/</span>
+                    <a href="#">Oracle</a><span>/</span>
+                    <a href="#">大数据</a><span>/</span>
+                    <a href="#">SQL Server</a><span>/</span>
+                </p>
+                <h4>推荐</h4>
+                <p><a href="#">课程 | R语言基础</a></p>
+                <p><a href="#">课程 | OpenStack基础</a></p>
+                <p><a href="#">课程 | MySQL开发技巧(二)</a></p>
+            </div>
+            <div class="e hidden">
+                <h4>分类目录</h4>
+                <p>
+                    <a href="#">PhotoShop</a><span>/</span>
+                    <a href="#">Maya</a><span>/</span>
+                    <a href="#">Premiere</a><span>/</span>
+                    <a href="#">ZBrush</a><span>/</span>
+                </p>
+                <h4>推荐</h4>
+                <p><a href="#">课程 | "Doge"变化术</a></p>
+                <p><a href="#">课程 | PS入门基础-魔幻调色</a></p>
+                <p><a href="#">课程 | Premiere魔术——图片变电影</a></p>
+            </div>
+        </div>
+        <div class="bannerContent">
+            <a data-bId="0" class="bannerContent-1 active block" href="#"></a>
+            <a data-bId="1" class="bannerContent-2 hidden" href="#"></a>
+            <a data-bId="2" class="bannerContent-3 hidden" href="#"></a>
+        </div>
+        <span class="pre-arrow"></span>
+        <span class="next-arrow"></span>
+        <div class="banner-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="wrap-recommend">
+        <div class="recommend-title">
+            <p>实战推荐</p>
+            <a href="#" title="更多">更多></a>
+        </div>
+        <div class="clearfix recommendContent">
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/recomend-jpg1.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-price">￥128</span>
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/recomend-jpg2.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/recomend-jpg3.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/recomend-jpg4.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal marginR0">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/recomend-jpg5.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-recommend">
+        <div class="course-title">
+            <p>免费好课</p>
+            <a href="#" title="更多">更多></a>
+        </div>
+        <div class="clearfix courseContent">
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/freeCourse-jpg1.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/freeCourse-jpg2.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/freeCourse-jpg3.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/freeCourse-jpg4.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="normal marginR0">
+                <a href="#" target="_blank">
+                    <div class="p-re w-h-full">
+                        <img src="images/freeCourse-jpg5.jpg"/>
+                        <div class="animation-to-top introdce-box">
+                            <p class="introduce-title">前端到后台的ThinkPHP开发整站</p>
+                            <p class="introduce-full">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                        </div>
+                        <p class="other-msg">
+                            <span class="course-students">967人在学</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-content">
+        <div class="margin0A">
+            <div class="web wrap-content-box clearfix">
+                <div class="classify" style="background-image: url('images/web-bg.png')">
+                    <h1 class="title">Web<br />前端工程师</h1>
+                    <a href="#" target="_blank">职业路径 <span>></span></a>
+                    <div class="classify-recommend">
+                        <a href="#" target="_blank">JQuery源码探索之旅</a>
+                        <a href="#" target="_blank">前端经典案例集萃之"图片、信息展示"</a>
+                        <a href="#" target="_blank">高德开发者必经之路——JS API篇</a>
+                    </div>
+                </div>
+                <div class="marginR0 heighter">
+                    <div>
+                        <div class="normal">
+                            <a href="#" target="_blank">
+                                <div class="p-re w-h-full">
+                                    <img src="images/webasdasdasdsadad234234.jpg"/>
+                                    <div class="animation-to-top introdce-box">
+                                        <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                        <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                                    </div>
+                                    <p class="other-msg">
+                                        <span class="course-students">23843人在学</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wraplist">
+                            <div class="fleft list">
+                                <a href="#" target="_blank">如何使用高德JS-API进行基于LBS的开发</a>
+                                <a href="#" target="_blank">侧边栏信息展示效果</a>
+                                <a href="#" target="_blank">CSS深入理解之margin</a>
+                                <a href="#" target="_blank">原生 JS 实现帧动画库</a>
+                                <a href="#" target="_blank">HTML5音乐可视化</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="longer" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/webb6280001fda106000338-228-128.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="longer" style="background-image: url('images/web9c98e000138b704680172.jpg')">
+                    <a href="#">开发基于JS-API的高德地图应用</a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/web1927a0001c2e806000338-228-128.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="java wrap-content-box clearfix">
+                <div class="classify" style="background-image: url('images/java-bg.png')">
+                    <h1 class="title">Java<br />工程师</h1>
+                    <a href="#" target="_blank">职业路径 <span>></span></a>
+                    <div class="classify-recommend">
+                        <a href="#" target="_blank">模式宗师养成宝典之Java版</a>
+                        <a href="#" target="_blank">搞定Java加解密</a>
+                        <a href="#" target="_blank">Hibernate开发宝典</a>
+                    </div>
+                </div>
+                <div class="marginR0 heighter">
+                    <div>
+                        <div class="normal">
+                            <a href="#" target="_blank">
+                                <div class="p-re w-h-full">
+                                    <img src="images/java-jpg1.jpg"/>
+                                    <div class="animation-to-top introdce-box">
+                                        <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                        <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                                    </div>
+                                    <p class="other-msg">
+                                        <span class="course-students">23843人在学</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wraplist">
+                            <div class="fleft list">
+                                <a href="#" target="_blank">如何使用高德JS-API进行基于LBS的开发</a>
+                                <a href="#" target="_blank">侧边栏信息展示效果</a>
+                                <a href="#" target="_blank">CSS深入理解之margin</a>
+                                <a href="#" target="_blank">原生 JS 实现帧动画库</a>
+                                <a href="#" target="_blank">HTML5音乐可视化</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="longer" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/java-jpg2.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/java-jpg3.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/java-jpg4.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="php wrap-content-box clearfix">
+                <div class="classify" style="background-image: url('images/php-bg.png')">
+                    <h1 class="title">PHP<br />工程师</h1>
+                    <a href="#" target="_blank">职业路径 <span>></span></a>
+                    <div class="classify-recommend">
+                        <a href="#" target="_blank">PHP开发工程师闯关记--初识PHP</a>
+                        <a href="#" target="_blank">从零开始学习ThinkPHP框架</a>
+                    </div>
+                </div>
+                <div class="marginR0 heighter">
+                    <div>
+                        <div class="normal">
+                            <a href="#" target="_blank">
+                                <div class="p-re w-h-full">
+                                    <img src="images/php-jpg1.jpg"/>
+                                    <div class="animation-to-top introdce-box">
+                                        <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                        <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                                    </div>
+                                    <p class="other-msg">
+                                        <span class="course-students">23843人在学</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wraplist">
+                            <div class="fleft list">
+                                <a href="#" target="_blank">如何使用高德JS-API进行基于LBS的开发</a>
+                                <a href="#" target="_blank">侧边栏信息展示效果</a>
+                                <a href="#" target="_blank">CSS深入理解之margin</a>
+                                <a href="#" target="_blank">原生 JS 实现帧动画库</a>
+                                <a href="#" target="_blank">HTML5音乐可视化</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="longer" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/php-jpg2.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/webb6280001fda106000338-228-128.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="android wrap-content-box clearfix">
+                <div class="classify" style="background-image: url('images/android-bg.png')">
+                    <h1 class="title">Android<br />工程师</h1>
+                    <a href="#" target="_blank">职业路径 <span>></span></a>
+                    <div class="classify-recommend">
+                        <a href="#" target="_blank">从0开始学习制作QQ侧滑菜单</a>
+                        <a href="#" target="_blank">高德开发者必由之路——Android SDK篇</a>
+                        <a href="#" target="_blank">小慕感恩计划-实战Hot!!!</a>
+                    </div>
+                </div>
+                <div class="marginR0 heighter">
+                    <div>
+                        <div class="normal">
+                            <a href="#" target="_blank">
+                                <div class="p-re w-h-full">
+                                    <img src="images/android-jpg1.jpg"/>
+                                    <div class="animation-to-top introdce-box">
+                                        <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                        <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                                    </div>
+                                    <p class="other-msg">
+                                        <span class="course-students">23843人在学</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wraplist">
+                            <div class="fleft list">
+                                <a href="#" target="_blank">如何使用高德JS-API进行基于LBS的开发</a>
+                                <a href="#" target="_blank">侧边栏信息展示效果</a>
+                                <a href="#" target="_blank">CSS深入理解之margin</a>
+                                <a href="#" target="_blank">原生 JS 实现帧动画库</a>
+                                <a href="#" target="_blank">HTML5音乐可视化</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="longer" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/android-jpg2.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/android-jpg2.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/android-jpg3.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="iOS wrap-content-box clearfix">
+                <div class="classify" style="background-image: url('images/iOS-bg.png')">
+                    <h1 class="title">iOS<br />工程师</h1>
+                    <a href="#" target="_blank">为果粉而生 <span>></span></a>
+                    <div class="classify-recommend">
+                        <a href="#" target="_blank">Swift加薪利器-iOS动画特辑</a>
+                        <a href="#" target="_blank">iOS苹果表开发攻略</a>
+                    </div>
+                </div>
+                <div class="marginR0 heighter">
+                    <div>
+                        <div class="normal">
+                            <a href="#" target="_blank">
+                                <div class="p-re w-h-full">
+                                    <img src="images/ios-jpg1.jpg"/>
+                                    <div class="animation-to-top introdce-box">
+                                        <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                        <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                                    </div>
+                                    <p class="other-msg">
+                                        <span class="course-students">23843人在学</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wraplist">
+                            <div class="fleft list">
+                                <a href="#" target="_blank">如何使用高德JS-API进行基于LBS的开发</a>
+                                <a href="#" target="_blank">侧边栏信息展示效果</a>
+                                <a href="#" target="_blank">CSS深入理解之margin</a>
+                                <a href="#" target="_blank">原生 JS 实现帧动画库</a>
+                                <a href="#" target="_blank">HTML5音乐可视化</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="longer" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/iOS-jpg2.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="longer" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/iOS-jpg2.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="linux wrap-content-box clearfix">
+                <div class="classify" style="background-image: url('images/Linux-bg.png')">
+                    <h1 class="title">Linux<br />运维工程师</h1>
+                    <a href="#" target="_blank">职业路径 <span>></span></a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/linux-jpg1.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/linux-jpg2.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/linux-jpg3.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="normal marginR0">
+                    <a href="#" target="_blank">
+                        <div class="p-re w-h-full">
+                            <img src="images/linux-jpg1.jpg"/>
+                            <div class="animation-to-top introdce-box">
+                                <p class="introduce-title">数学知识在CSS动画中的应用</p>
+                                <p class="introduce-full">数学知识与CSS结合实现酷炫效果!</p>
+                            </div>
+                            <p class="other-msg">
+                                <span class="course-students">23843人在学</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="article wrap-content-box clearfix">
+                <div class="classify" style="background-image: url('images/article-bg.png')">
+                    <h1 class="title">手记&猿问</h1>
+                    <p class="ma">IT知识和答疑，想要的都在这</p>
+                    <a href="#">手记</a>
+                    <a href="#">猿问</a>
+                    <a href="#">积分商城</a>
+                </div>
+                <div class="longer" style="background-image: url('images/article-bg2.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="longer marginR0" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="longer" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+                <div class="longer marginR0" style="background-image: url('images/web162gd16dg12g71671.jpg')">
+                    <a href="#">只会用HTML5做小广告、小游戏？</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-wrap">
+            <div class="footer-sns">
+                <a href="#" class="footer-sns-weibo" title="新浪微博"></a>
+                <a href="#" class="footer-sns-weixin" title="微信"></a>
+                <a href="#" class="footer-sns-qqweibo" title="腾讯微博"></a>
+                <a href="#" class="footer-sns-qzone" title="QQ空间"></a>
+            </div>
+            <p class="footer-link">
+                <a href="#" title="关于我们">关于我们</a>
+                <a href="#" title="人才招聘">人才招聘</a>
+                <a href="#" title="讲师招募">讲师招募</a>
+                <a href="#" title="联系我们">联系我们</a>
+                <a href="#" title="意见反馈">意见反馈</a>
+                <a href="#" title="友情链接">友情链接</a>
+            </p>
+            <p class="footer-copyright">© 2016 imooc.com  京ICP备13046642号</p>
+        </div>
+    </footer>
+    <div class="sideBar">
+        <a href="#" class="feedback" title="意见反馈"></a>
+        <a href="#" class="appdown" title="app下载">
+            <div class="appdown-ewm"></div>
+        </a>
+        <a href="#" class="gfwx" title="官方微信">
+            <div class="gfwx-ewm"></div>
+        </a>
+        <a href="#" class="toTop" title="返回顶部"></a>
+    </div>
+    <div class="bk"></div>
+    <script src="js/script.js"></script>
+    <script>
+        //  banner-wrap 鼠标移动到对应块上显示对应版块
+
+        var menulists = document.querySelector('.menuwrap ul').children;
+        var itemLists = document.querySelector('.menuContent').children;
+//        console.log(menulists);
+        for(var i=menulists.length-1 ; i>=0 ; i--){
+            menulists[i].onmouseover = (function(item){
+                return function(){
+//                    console.log(index);
+                    var items = ['a','b','c','d','e'];
+                    var index = items.indexOf(item.getAttribute('data-id'));
+                    itemLists[index].setAttribute('class','block '+items[index]);
+                }
+            })(menulists[i])
+            menulists[i].onmouseout = (function(item){
+                return function(){
+                    var items = ['a','b','c','d','e'];
+                    var index = items.indexOf(item.getAttribute('data-id'));
+                    itemLists[index].setAttribute('class','hidden '+items[index]);
+                }
+            })(menulists[i])
+        }
+    </script>
+</body>
+</html>

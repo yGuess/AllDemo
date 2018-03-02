@@ -1,0 +1,63 @@
+
+
+.needLogin{
+    margin-top: 2.26667rem;
+}
+.logo{
+    text-align: center;
+    height: 1.2rem;
+    margin-bottom: 1.64rem;
+}
+.logo img{
+    width: 3.57333rem;
+    height: 1.2rem;
+}
+.btnLogin{
+    height: 1.30667rem;
+    line-height: 1.30667rem;
+    background-color: #B4282D;
+    color: #fff;
+    border-radius: .05333rem;
+    font-size: .37333rem;
+    text-align: center;
+    margin: 0 .53333rem 1.81333rem;
+    box-sizing: border-box;
+}
+.thirdLogin{
+    padding: 0 .4rem;
+    height: .53333rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thirdItem{
+    flex: 1;
+    text-align: center;
+    height: .53333rem;
+    font-size: .37333rem;
+    color: #7F7F7F;
+    border-right: 1px solid #979797;
+    background-color: #fff;
+}
+.thirdItem:last-child{
+    border-right: none;
+}
+.thirdItem .wxIcon,
+.thirdItem .qqIcon,
+.thirdItem .weiboIcon{
+    display: inline-block;
+    width: .53333rem;
+    height: .53333rem;
+}
+.thirdItem .wxIcon{
+    background-image: url(../assets/images/icons/wx.png)
+}
+.thirdItem .qqIcon{
+    background-image: url(../assets/images/icons/qq.png)
+}
+.thirdItem .weiboIcon{
+    background-image: url(../assets/images/icons/weibo.png)
+}
+.thirdItem span:last-child{
+    margin-left: .06667rem;
+}

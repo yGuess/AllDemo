@@ -1,0 +1,39 @@
+.head{
+    background-color: #fafafa;
+    padding: 0 .21333rem 0 .32rem;
+    height: 1.17333rem;
+    text-align: center;
+}
+.head a{
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 2.29333rem 5.30667rem;
+    background-repeat: no-repeat;
+    background-image: url(../../../assets/images/icons/img-sprites-hd-s342878591a-9af1a97852.png);
+}
+.iconMainPage{
+    width: .64rem;
+    height: .58667rem;
+    margin-top: 0.293rem;
+    background-position: 0 -.98667rem;
+}
+.iconLogo{
+    width: 2.29333rem;
+    height: .72rem;
+    margin-top: 0.22667rem;
+    margin-left: 1.13rem;
+    background-position: 0 -1.70667rem;
+}
+.iconSearch{
+    width: .85333rem;
+    height: .85333rem;
+    margin-top: 0.16rem;
+    margin-right: .26667rem;
+    background-position: 0 -4.45333rem;
+}
+.iconCart{
+    width: .85333rem;
+    height: .85333rem;
+    background-position: 0 0;
+    margin-top: 0.16rem;
+}
